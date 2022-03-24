@@ -5,6 +5,10 @@ import { useStateValue } from "./StateProvider";
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
     const [{ basket }, dispatch] = useStateValue();
 
+    const confirmOrder=()=>{
+
+    }
+
     const removeFromBasket = () => {
         // remove the item from the basket
         dispatch({
@@ -33,7 +37,10 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
                     ))}
                 </div>
                 {!hideButton && (
-                    <button onClick={removeFromBasket}>Remove from Basket</button>
+                    <button className='orderBtn' onClick={confirmOrder}>Confirm Order</button>
+                )}
+                {!hideButton && (
+                    <button className='removeBtn' onClick={removeFromBasket}>Remove from Selections</button>
                 )}
             </div>
         </div>

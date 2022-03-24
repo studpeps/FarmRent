@@ -13,9 +13,9 @@ function Home() {
           alt="hey cant see"
         />
         <div className="welcome_text">
-          !Welcome to FarmRest!
+        A place for all your
           <p>
-          One stop destination for Farmers
+          Farming needs
           </p>
         </div>
 
@@ -23,56 +23,111 @@ function Home() {
           <img src={arrow}/>
         </div>
 
+        
+
         <div className="home__row">
-          <Product
+        <Product
             id="12321341"
             title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
             price={11.96}
             rating={5}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+            image="https://www.tafe.com/tractors/imt/thumb/TAFE-IMT-tractor-565.2.png"
           />
           <Product
             id="49538094"
             title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
             price={239.0}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+            image="https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-500x500.jpg"
           />
-        </div>
-
-        <div className="home__row">
           <Product
             id="4903850"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+            title="JCB Tractor"
             price={199.99}
             rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+            image="https://myknowledgebase.in/farming-tools-implements-and-equipment/spade-phawra/"
           />
           <Product
-            id="23445930"
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-            price={98.99}
+            id="12321341"
+            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+            price={11.96}
             rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            image="https://farmingbase.com/wp-content/uploads/2020/01/920px-Pickaxe-1.jpg"
           />
           <Product
-            id="3254354345"
-            title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
-            price={598.99}
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtUQ58vl8fMMAqyHa4_8_9BTG00Di_DS37bg&usqp=CAU"
           />
+          <Product
+            id="4903850"
+            title="JCB Tractor"
+            price={199.99}
+            rating={3}
+            image="https://myknowledgebase.in/farming-tools-implements-and-equipment/spade-phawra/"
+          />
+          <Product
+            id="12321341"
+            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+            price={11.96}
+            rating={5}
+            image="https://farmingbase.com/wp-content/uploads/2020/01/920px-Pickaxe-1.jpg"
+          />
+          <Product
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
+            rating={4}
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtUQ58vl8fMMAqyHa4_8_9BTG00Di_DS37bg&usqp=CAU"
+          />
+           <Product
+            id="12321341"
+            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+            price={11.96}
+            rating={5}
+            image="https://www.tafe.com/tractors/imt/thumb/TAFE-IMT-tractor-565.2.png"
+          />
+          <Product
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
+            rating={4}
+            image="https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-500x500.jpg"
+          />
+          <Product
+            id="12321341"
+            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+            price={11.96}
+            rating={5}
+            image="https://www.tafe.com/tractors/imt/thumb/TAFE-IMT-tractor-565.2.png"
+          />
+          <Product
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
+            rating={4}
+            image="https://3.imimg.com/data3/PI/QO/GLADMIN-21651/agricultural-equipment-500x500.jpg"
+          />
+          <Product
+            id="4903850"
+            title="JCB Tractor"
+            price={199.99}
+            rating={3}
+            image="https://myknowledgebase.in/farming-tools-implements-and-equipment/spade-phawra/"
+          />
+          
+          <Product
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
+            rating={4}
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtUQ58vl8fMMAqyHa4_8_9BTG00Di_DS37bg&usqp=CAU"
+          />
+
         </div>
 
-        <div className="home__row">
-          <Product
-            id="90829332"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
-            price={1094.98}
-            rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
-          />
-        </div>
       </div>
     </div>
   );
