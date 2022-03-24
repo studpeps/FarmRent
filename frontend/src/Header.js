@@ -35,14 +35,6 @@ function Header() {
           </div>
         </Link>
 
-        <Link to='/orders'>
-          <div className="header__option">
-            <span className="header__optionLineOne">Active</span>
-            <span className="header__optionLineTwo">Orders</span>
-          </div>
-        </Link>
-        
-
         <Link to="/checkout">
         <div className="header__option">
           <span className="header__optionLineOne">Your</span>
@@ -51,6 +43,13 @@ function Header() {
               {basket?.length}
             </span> </span>
           
+        </div>
+        </Link>
+
+        <Link to="/dashboard">
+        <div className="header__option">
+          <span className="header__optionLineOne">Your</span>
+          <span className="header__optionLineTwo">Dashboard</span>          
         </div>
         </Link>
       </div>
