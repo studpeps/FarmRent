@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import arrow from "./images/arrowHead.png"
 import Product from "./Product";
 
 function Home() {
@@ -8,9 +9,19 @@ function Home() {
       <div className="home__container">
         <img
           className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
+          src="https://media.tehrantimes.com/d/t/2021/06/20/4/3808608.jpg"
+          alt="hey cant see"
         />
+        <div className="welcome_text">
+          !Welcome to FarmRest!
+          <p>
+          One stop destination for Farmers
+          </p>
+        </div>
+
+        <div className="arrow_head">
+          <img src={arrow}/>
+        </div>
 
         <div className="home__row">
           <Product
