@@ -28,10 +28,8 @@ function App() {
             <Header />
             <Checkout />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard/>
-          </Route>
-          <Route path="/">
+          <Route exact path="/dashboard/:section" component={Dashboard}/>
+          <Route exact path="/">
             <Header />
             <Home />
           </Route>

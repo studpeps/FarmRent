@@ -17,10 +17,13 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './items';
+import Items from "./Items";
 import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
 import CreateItem from './CreateItem';
+import Profile from './Profile';
+import YourOrders from './YourOrders';
+import ItemsPosted from './ItemsPosted';
 
 const drawerWidth = 240;
 
@@ -70,13 +73,15 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function DashboardContent({match}) {
   const [open, setOpen] = React.useState(true);
   const history = useHistory();
-
+  const [component, setcomponent] = React.useState(match.params.section)
+  console.log(component, match?.params);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -142,7 +147,7 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            <Items setcomponent={setcomponent}/>
           </List>
         </Drawer>
         <Box
@@ -159,7 +164,14 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <CreateItem/>
+          {
+          {
+              profile: <Profile/>,
+              createItem: <CreateItem/>,
+              orders: <YourOrders/>,
+              itemsPosted: <ItemsPosted/>
+          }[component]
+        }
           </Container>
         </Box>
       </Box>
@@ -167,6 +179,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Dashboard({match}) {
+  return <DashboardContent match={match}/>;
 }
