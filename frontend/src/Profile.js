@@ -1,8 +1,11 @@
+import { Grid, Paper } from '@material-ui/core';
 import React from 'react';
 
 function Profile(){
     return(
-        <h1>Hello</h1>
+        <Grid item xs={12} md={8} lg={9}>
+               <h1>Hello!</h1>
+        </Grid>
     )
 }
 

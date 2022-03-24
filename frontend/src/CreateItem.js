@@ -1,8 +1,14 @@
+import { TextField, FormControl   } from '@material-ui/core';
 import React from 'react';
+import "./CreateItem.css"
 
 function CreateItem(){
     return(
-        <h1>Create</h1>
+        <div>
+            <h1 className="heading">Post an Item</h1>
+            <FormControl>
+            </FormControl>
+        </div>
     )
 }
 
