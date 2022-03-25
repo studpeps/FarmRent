@@ -3,9 +3,22 @@ import "./Home.css";
 import arrow from "./images/arrowHead.png"
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
+import axios from 'axios';
 
 function Home() {
   const [{ searchText }, dispatch] = useStateValue();
+  const [fetchedItems, setFetchedItems] = React.useState([]);
+
+  React.useEffect(()=>{
+    axios({
+      method:'GET',
+      url:'https://farm-equipment-rental.herokuapp.com/api/item/get-all/1/6'
+    })
+    .then((resp)=>{
+      setFetchedItems(resp.data.result);
+    })
+    .catch(err => console.log(err.message))
+  },[])
   
   var items = [
     {
@@ -132,7 +145,7 @@ function Home() {
 
         <div className="home__row">
             {
-              items.
+              fetchedItems.
               filter((item)=>{
                 if(searchText!="" && item.title.toLowerCase().includes(searchText.split(" ").join(" ").toLowerCase()))
                   return item;
@@ -142,10 +155,9 @@ function Home() {
               .map((item)=>{
                 return  <Product
             id={item.id}
-            title={item.title}
-            price={item.price}
-            rating={item.rating}
-            image={item.image}
+            title={item.Description}
+            price={item.CurrentPrice}
+            image="https://acadianakarate.com/wp-content/uploads/2017/04/default-image.jpg"
           />
               })
             }
