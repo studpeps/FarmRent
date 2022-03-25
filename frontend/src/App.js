@@ -33,6 +33,7 @@ function App() {
             <Header />
             <Home />
           </Route>
+
           
         </Switch>
       </div>

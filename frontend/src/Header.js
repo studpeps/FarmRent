@@ -5,13 +5,32 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import logo from "./images/logo.png"
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { useHistory } from "react-router-dom";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const [searchText, setSearchText] = React.useState("");
+  const history = useHistory();
 
   const handleAuthenticaton = () => {
     console.log("Handle auth");
   }
+
+  const handleSubmit = (e) =>{
+    if(e.keyCode==13){
+      e.preventDefault();
+      console.log(searchText);
+      dispatch(
+        {
+          type:"SEARCH_TEXT",
+          text: searchText
+        }
+      )
+    }
+   
+  }
+
+  console.log(searchText)
 
   return (
     <div className="header">
@@ -23,8 +42,8 @@ function Header() {
       </Link>
 
       <div className="header__search">
-        <input className="header__searchInput" type="text" />
-        <SearchIcon className="header__searchIcon" />
+        <input className="header__searchInput" type="text" onChange={(e) => setSearchText(e.target.value)} onKeyDown={handleSubmit}/>
+        <SearchIcon className="header__searchIcon"/>
       </div>
 
       <div className="header__nav">

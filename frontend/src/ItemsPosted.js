@@ -2,7 +2,7 @@ import React from 'react';
 
 function ItemsPosted(){
     return(
-        <h1>Items Posted</h1>
+        <h1>No Items Posted</h1>
     )
 }
 

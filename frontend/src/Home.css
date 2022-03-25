@@ -1,7 +1,5 @@
 .home {
-  display: flex;
-  justify-content: center;
-  max-width: 1500px;
+  width: 100%;
   background-color: white;
 }
 
@@ -9,8 +7,8 @@
   flex-wrap: wrap;
   display: flex;
   z-index: 1;
-  margin-left: 5px;
-  margin-right: 5px;
+  width: 1500px;
+  justify-content: center;
 }
 
 .home__image {
