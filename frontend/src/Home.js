@@ -147,7 +147,7 @@ function Home() {
             {
               fetchedItems.
               filter((item)=>{
-                if(searchText!="" && item.title.toLowerCase().includes(searchText.split(" ").join(" ").toLowerCase()))
+                if(searchText!="" && item.Name.toLowerCase().includes(searchText.split(" ").join(" ").toLowerCase()))
                   return item;
                 else if(searchText==="")
                   return item;
@@ -155,8 +155,10 @@ function Home() {
               .map((item)=>{
                 return  <Product
             id={item.id}
-            title={item.Description}
+            rating={0}
+            title={item.Name}
             price={item.CurrentPrice}
+            days={item.NumberOfDaysAvailable}
             image="https://acadianakarate.com/wp-content/uploads/2017/04/default-image.jpg"
           />
               })
