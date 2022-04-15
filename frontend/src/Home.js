@@ -4,6 +4,7 @@ import arrow from "./images/arrowHead.png"
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
 import axios from 'axios';
+import image from "./images/land.webp";
 
 function Home() {
   const [{ searchText }, dispatch] = useStateValue();
@@ -12,10 +13,11 @@ function Home() {
   React.useEffect(()=>{
     axios({
       method:'GET',
-      url:'https://farm-equipment-rental.herokuapp.com/api/item/get-all/1/6'
+      url:'https://farm-equipment-rental.herokuapp.com/api/item/get-all/1/20'
     })
     .then((resp)=>{
       setFetchedItems(resp.data.result);
+      console.log(resp.data.result)
     })
     .catch(err => console.log(err.message))
   },[])
@@ -122,6 +124,12 @@ function Home() {
           }
   ]
 
+  var images=[
+    "./images/cultivator.jpg",
+    "./images/sprinkler.jpg",
+    "./images/Tractor.jpg"
+  ]
+
   return (
     <div className="home">
       <div className="home__container">
@@ -152,14 +160,17 @@ function Home() {
                 else if(searchText==="")
                   return item;
               })
-              .map((item)=>{
+              .map((item,index)=>{
                 return  <Product
             id={item.id}
             rating={0}
             title={item.Name}
             price={item.CurrentPrice}
             days={item.NumberOfDaysAvailable}
-            image="https://acadianakarate.com/wp-content/uploads/2017/04/default-image.jpg"
+            number={item.OwnerMobileNumber}
+            address={item.Address}
+            image={image}
+            name={item.OwnerName}
           />
               })
             }

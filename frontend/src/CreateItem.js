@@ -1,6 +1,7 @@
 import { TextField, FormControl, InputLabel, Select, MenuItem, FormControlLabel, Checkbox, Button   } from '@material-ui/core';
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import "./CreateItem.css"
 import "./Dashboard.css";
 function CreateItem(){
@@ -9,6 +10,22 @@ function CreateItem(){
     const [CurrentPrice, setCurrentPrice] = React.useState(0);
     const [NumberOfDaysAvailable, setNumberOfDaysAvailable] = React.useState(0);
     const [Address, setAddress] = React.useState("");
+    const [Latitude,setLatitude]=React.useState(0);
+    const [Longitude,setLongitude]=React.useState(0);
+    const history=useHistory();
+
+    useEffect(()=>{
+        componentDidMount();
+    })
+    function componentDidMount() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log("Latitude is :", position.coords.latitude);
+          console.log("Longitude is :", position.coords.longitude);
+          setLatitude(position.coords.latitude);
+          setLongitude(position.coords.longitude);
+          console.log(Latitude);
+        });
+      }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -17,8 +34,8 @@ function CreateItem(){
             CurrentPrice,
             NumberOfDaysAvailable ,
             Address,
-            Latitude: 1212,
-            Longitude: 1122,
+            Latitude,
+            Longitude,
             CurrentStatus: 1,
             CreatedBy: "623e082cdb76a1738bbe5386",
             Category: "623ca1d3c93abf60c8a92239",
@@ -29,7 +46,12 @@ function CreateItem(){
             url:"https://farm-equipment-rental.herokuapp.com/api/item/add-item",
             data: newItem
         })
-        .then(resp=> console.log(resp))
+        .then(resp=> 
+            {
+            console.log(resp)
+            history.push("/");
+            }
+        )
         .catch(err => console.log(err.message))
     }
 

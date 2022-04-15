@@ -3,6 +3,7 @@ import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
+import image from "./images/default.png"
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -18,9 +19,12 @@ function Checkout() {
             <CheckoutProduct
               id={item.id}
               title={item.title}
-              image={item.image}
+              image={image}
               price={item.price}
-              rating={item.rating}
+              number={item.number}
+              address={item.address}
+              name={item.name}
+              rating={0}
             />
           ))}
 
